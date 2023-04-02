@@ -1,0 +1,391 @@
+$logo-color: rgb(224, 251, 79);
+$subscribe-nav: rgb(198, 198, 198);
+$text-color: rgb(255, 255, 255);
+$button-colr: rgb(225, 252, 79);
+$background-color: rgb(0, 0, 0);
+$background-color-right: rgb(29, 29, 29);
+$border-color: rgb(225, 252, 79);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $background-color;
+}
+@mixin displaySpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin displaySpaceAround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin yellow-btn {
+  border: 0.1rem solid $button-colr;
+  color: rgb(0, 0, 0);
+  background-color: $button-colr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(2rem);
+}
+header {
+  position: relative;
+  .header-hero {
+    @include displaySpaceBetween;
+  }
+  .hero-boot-container {
+    
+    height: 100vh;
+    .logo {
+      color: $text-color;
+      font-size: 2rem;
+      font-weight: bolder;
+      top: 0;
+      padding: 2rem;
+      position: absolute;
+    }
+    .boot {
+      padding-top: 10rem;
+    }
+  }
+  .hero-plastic-line-container {
+    background-color: $background-color-right;
+    padding: 0 2rem 1rem 5rem;
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    a {
+      color: $text-color;
+      text-decoration: none;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .home-nav {
+      color: $button-colr;
+    }
+    .nav {
+      display: flex;
+      justify-content: right;
+      position: absolute;
+      right: 0;
+      padding: 2rem;
+    }
+    .hero-plastic-line {
+      max-width: 100%;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      padding-top: 7rem;
+      line-height: 1rem;
+    }
+    h1 {
+      color: $text-color;
+      font-size: 9rem;
+      font-weight: bolder;
+    }
+    .btn {
+      @include yellow-btn;
+    }
+  }
+}
+
+/**Main Content**/
+/*CONTENT 1*/
+.content-1 {
+  position: relative;
+  @include displaySpaceAround;
+  padding: 20rem 3rem;
+
+  .hoodie-model,
+  .boot-modell {
+    max-width: 100%;
+  }
+  .paragraph-container {
+    color: $text-color;
+    padding: 0 5rem;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 7rem;
+
+      span {
+        font-size: 8rem;
+      }
+    }
+    .paragraph {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+    .btn {
+      @include yellow-btn;
+      width: 20% !important;
+      margin-top: 1.5rem;
+      position: initial !important;
+      transform: initial !important;
+      .txt {
+        text-align: center;
+      }
+    }
+  }
+  .boot-model {
+    position: absolute;
+    right: 7rem;
+    bottom: 10rem;
+  }
+}
+/*CONTEN 2*/
+.content-2 {
+    
+    .header{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3rem;
+        p{
+        display: flex;
+        flex-direction: column;
+        color: $text-color;
+        font-size: 1.5rem;
+        margin: auto;
+        font-weight: bolder;
+        span{
+            font-size: 10rem;
+
+        }
+    }
+    }
+  .content-2-flx {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $text-color;
+    img{
+        max-width:100%;
+
+    }
+    .feat{
+        display: flex;
+        align-items: center;
+        
+    }
+   .img-container{
+    border: 0.2rem solid $button-colr;
+    background-color: $button-colr;
+    height: 115vh;
+    width: 30%;
+    position: relative;
+    img{
+        position: absolute;
+        transform: translateY(-10%);
+        max-width: 100%;
+    }
+   }
+    p{
+        display: flex;
+        flex-direction: column;
+        
+    }
+  }
+}
+
+/*CONTENT 3*/
+.content-3{
+    color: $text-color;
+    position: relative;
+    .header{
+        position: absolute;
+        right: 19rem;
+        transform: translateY(8rem);
+        z-index: 1;
+        p{
+            display:flex ;
+            flex-direction: column;
+            font-size: 1.5rem;
+            span{
+                font-size: 8rem;
+            }
+        }
+    }
+    .content-3-flx{
+        padding-top: 15rem;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        h2{
+            font-size: 1.5rem;
+            line-height: 7rem;
+        }
+        p{
+            display: flex;
+            flex-direction: column;
+            line-height: 2rem;
+            font-size: 1rem;
+    
+        }
+        .desc-right{
+            padding:7rem 7rem;
+            
+        }
+        .desc-left{
+            padding-left: 3rem;
+        }
+        .transparent-boot{
+            position: absolute;
+            right: 28.5rem;
+            width: 40%;
+            top: 30.5rem;
+        }
+    }
+}
+
+/*CONTENT 4*/
+.content-4{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $text-color;
+    padding-top: 3rem;
+
+    .edition{
+        padding-left: 3rem;
+    }
+    h1{
+        display: flex;
+        flex-direction: column;
+        font-size: 9rem;
+        line-height: 8rem;
+    }
+    p{
+        font-size: 1.5rem;
+        line-height: 5rem;
+    }
+    img{
+        max-width: 90%;
+    }
+    .btn{
+        @include yellow-btn;
+        position: initial !important;
+
+    }
+}
+
+/*CONTENT 5*/
+    .content-5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $text-color;
+        padding-top: 12rem;
+        .p-flex{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .p-sl-font{
+            font-size: 2rem;
+        }
+        .p-bg-font{
+            font-size: 4rem;
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+            width: 100%;
+            padding: 1.5rem;
+            outline: none;
+            border: 0.3rem solid $button-colr;
+            background-color: inherit;
+            margin-top: 2rem;
+            &::placeholder{
+                font-size: 1.5rem;
+                color: $text-color;
+            }
+        }
+        button{
+            width: 100%;
+            border: 0.3rem solid $button-colr;
+            background-color: $button-colr;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .socials-connect{
+            h2{
+                padding: 3rem 3rem;
+                font-size: 1;
+                
+            }
+        }
+        .socials{
+            display: flex;
+            justify-content: space-around;
+            a{
+                font-size: 2rem;
+                color: $text-color;
+                margin: 0 3rem;
+            }
+        }
+    }
+
+    /*FOOTER*/
+    footer{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height:90vh;
+        margin-top: 5rem;
+        background-image: url(images/footer-box.webp);
+        padding: 4rem 0rem;
+        color: $text-color;
+      .footer-nav{
+        display: flex;
+        justify-content: space-around;
+        
+        .nav{
+            display: flex;
+            flex-direction: column;
+            margin: 0 5rem;
+            color: $text-color;
+            h3{
+                font-size: 1.5rem;
+                line-height: 7rem;
+            }
+            a{
+                color: $text-color;
+                font-size: 1.2rem;
+                text-decoration: none;
+                line-height: 3rem;
+            }
+        }
+
+
+      }
+      .footer-logo{
+        color: $logo-color;
+      font-size: 2rem;
+      font-weight: bolder;
+      line-height: 7rem;
+      padding-bottom: 20rem;
+      }
+    }
