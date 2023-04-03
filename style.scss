@@ -5,6 +5,38 @@ $button-colr: rgb(225, 252, 79);
 $background-color: rgb(0, 0, 0);
 $background-color-right: rgb(29, 29, 29);
 $border-color: rgb(225, 252, 79);
+
+@mixin displaySpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @mixin displaySpaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @mixin yellow-btn {
+    border: 0.1rem solid $button-colr;
+    color: rgb(0, 0, 0);
+    background-color: $button-colr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(2rem);
+  }
+  @mixin arr-container{
+      border: 0.2rem solid $background-color;
+      background-color: rgba(0, 0, 0);
+  }
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,39 +47,16 @@ body {
   width: 100%;
   height: 100%;
   background-color: $background-color;
+  font-family: Arial,Helvetica,sans-serif;
+
 }
-@mixin displaySpaceBetween {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@mixin displaySpaceAround {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-@mixin yellow-btn {
-  border: 0.1rem solid $button-colr;
-  color: rgb(0, 0, 0);
-  background-color: $button-colr;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 25%;
-  padding: 0 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  transform: translateY(2rem);
-}
+
 header {
   position: relative;
   .header-hero {
     @include displaySpaceBetween;
   }
   .hero-boot-container {
-    
     height: 100vh;
     .logo {
       color: $text-color;
@@ -101,6 +110,9 @@ header {
     }
     .btn {
       @include yellow-btn;
+      .arrow-container {
+        @include arr-container;
+      }
     }
   }
 }
@@ -141,10 +153,21 @@ header {
       @include yellow-btn;
       width: 20% !important;
       margin-top: 1.5rem;
+      padding: 0.2rem;
       position: initial !important;
       transform: initial !important;
       .txt {
         text-align: center;
+      }
+      .arrow-container{
+        @include arr-container;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        img{
+            max-width: 70%;
+        }
       }
     }
   }
@@ -154,238 +177,268 @@ header {
     bottom: 10rem;
   }
 }
-/*CONTEN 2*/
+/*CONTENT 2*/
 .content-2 {
-    
-    .header{
-        display: flex;
+  .header {
+    display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 3rem;
-        p{
-        display: flex;
-        flex-direction: column;
-        color: $text-color;
-        font-size: 1.5rem;
-        margin: auto;
-        font-weight: bolder;
-        span{
-            font-size: 10rem;
-
-        }
+    p {
+      display: flex;
+      flex-direction: column;
+      color: $text-color;
+      font-size: 1.5rem;
+      margin: auto;
+      font-weight: bolder;
+      span {
+        font-size: 10rem;
+      }
     }
-    }
+  }
   .content-2-flx {
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: $text-color;
-    img{
-        max-width:100%;
+    img {
+      max-width: 100%;
+    }
+    .feat {
+      display: flex;
+      align-items: center;
 
+      h2 {
+        font-size: 1.5rem;
+        line-height: 10rem;
+        padding-top: 2.5rem;
+      }
     }
-    .feat{
-        display: flex;
-        align-items: center;
-        
-    }
-   .img-container{
-    border: 0.2rem solid $button-colr;
-    background-color: $button-colr;
-    height: 115vh;
-    width: 30%;
-    position: relative;
-    img{
+    .img-container {
+      border: 0.2rem solid $button-colr;
+      background-color: $button-colr;
+      height: 115vh;
+      width: 30%;
+      position: relative;
+      img {
         position: absolute;
         transform: translateY(-10%);
         max-width: 100%;
+      }
     }
-   }
-    p{
-        display: flex;
-        flex-direction: column;
-        
+
+    p {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5rem;
     }
   }
 }
 
 /*CONTENT 3*/
-.content-3{
-    color: $text-color;
+.content-3 {
+  color: $text-color;
+  position: relative;
+  .header {
+    position: absolute;
+    right: 19rem;
+    transform: translateY(8rem);
+    z-index: 1;
+    p {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+      span {
+        font-size: 8rem;
+      }
+    }
+  }
+  .content-3-flx {
+    padding-top: 15rem;
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    .header{
-        position: absolute;
-        right: 19rem;
-        transform: translateY(8rem);
-        z-index: 1;
-        p{
-            display:flex ;
-            flex-direction: column;
-            font-size: 1.5rem;
-            span{
-                font-size: 8rem;
-            }
-        }
+    h2 {
+      font-size: 1.5rem;
+      line-height: 7rem;
     }
-    .content-3-flx{
-        padding-top: 15rem;
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        h2{
-            font-size: 1.5rem;
-            line-height: 7rem;
-        }
-        p{
-            display: flex;
-            flex-direction: column;
-            line-height: 2rem;
-            font-size: 1rem;
-    
-        }
-        .desc-right{
-            padding:7rem 7rem;
-            
-        }
-        .desc-left{
-            padding-left: 3rem;
-        }
-        .transparent-boot{
-            position: absolute;
-            right: 28.5rem;
-            width: 40%;
-            top: 30.5rem;
-        }
+    p {
+      display: flex;
+      flex-direction: column;
+      line-height: 2rem;
+      font-size: 1rem;
     }
+    .desc-right {
+      padding: 7rem 7rem;
+    }
+    .desc-left {
+      padding-left: 3rem;
+    }
+    .transparent-boot {
+      position: absolute;
+      right: 28.5rem;
+      width: 40%;
+      top: 30.5rem;
+    }
+  }
 }
 
 /*CONTENT 4*/
-.content-4{
+.content-4 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: $text-color;
+  padding-top: 3rem;
+
+  .edition {
+    padding-left: 3rem;
+  }
+  h1 {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: $text-color;
-    padding-top: 3rem;
-
-    .edition{
-        padding-left: 3rem;
-    }
-    h1{
+    flex-direction: column;
+    font-size: 9rem;
+    line-height: 8rem;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 5rem;
+  }
+  img {
+    max-width: 90%;
+  }
+  .btn {
+    @include yellow-btn;
+    position: initial !important;
+    width: 30% !important;
+    padding: 0.5rem;
+    .arrow-container{
+        @include arr-container;
         display: flex;
-        flex-direction: column;
-        font-size: 9rem;
-        line-height: 8rem;
-    }
-    p{
-        font-size: 1.5rem;
-        line-height: 5rem;
-    }
-    img{
-        max-width: 90%;
-    }
-    .btn{
-        @include yellow-btn;
-        position: initial !important;
-
-    }
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        padding: 0.5rem;
+        img{
+            max-width: 70%;
+        }
+      }
+  }
 }
 
 /*CONTENT 5*/
-    .content-5{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: $text-color;
-        padding-top: 12rem;
-        .p-flex{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .p-sl-font{
-            font-size: 2rem;
-        }
-        .p-bg-font{
-            font-size: 4rem;
-            display: flex;
-            flex-direction: column;
-        }
-        input{
-            width: 100%;
-            padding: 1.5rem;
-            outline: none;
-            border: 0.3rem solid $button-colr;
-            background-color: inherit;
-            margin-top: 2rem;
-            &::placeholder{
-                font-size: 1.5rem;
-                color: $text-color;
-            }
-        }
-        button{
-            width: 100%;
-            border: 0.3rem solid $button-colr;
-            background-color: $button-colr;
-            padding: 1rem;
-            margin: 0.5rem 0;
-        }
-        .socials-connect{
-            h2{
-                padding: 3rem 3rem;
-                font-size: 1;
-                
-            }
-        }
-        .socials{
-            display: flex;
-            justify-content: space-around;
-            a{
-                font-size: 2rem;
-                color: $text-color;
-                margin: 0 3rem;
-            }
-        }
+.content-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $text-color;
+  padding-top: 12rem;
+  .p-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .arr-down{
+        transform: translateY(3rem);
     }
+  }
+  .p-sl-font {
+    font-size: 2rem;
+  }
+  .p-bg-font {
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    width: 100%;
+    padding: 1.5rem;
+    outline: none;
+    border: 0.3rem solid $button-colr;
+    background-color: inherit;
+    margin-top: 2rem;
+    cursor: pointer;
+    &::placeholder {
+      font-size: 1rem;
+      color: $text-color;
+      
+    }
+    
+    &:hover{
+        border-color: $text-color;
+        transition: border-color .2s ease-in-out;
+    }
+  }
+  button {
+    width: 100%;
+    border: 0.3rem solid $button-colr;
+    background-color: $button-colr;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    cursor: pointer;
 
-    /*FOOTER*/
-    footer{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        height:90vh;
-        margin-top: 5rem;
-        background-image: url(images/footer-box.webp);
-        padding: 4rem 0rem;
-        color: $text-color;
-      .footer-nav{
-        display: flex;
-        justify-content: space-around;
-        
-        .nav{
-            display: flex;
-            flex-direction: column;
-            margin: 0 5rem;
-            color: $text-color;
-            h3{
-                font-size: 1.5rem;
-                line-height: 7rem;
-            }
-            a{
-                color: $text-color;
-                font-size: 1.2rem;
-                text-decoration: none;
-                line-height: 3rem;
-            }
-        }
-
-
-      }
-      .footer-logo{
-        color: $logo-color;
+    &:hover{
+        background-color: $text-color;
+        border-color: $text-color;
+        transition: background-color .2s ease-in-out;
+    }
+  }
+  .socials-connect {
+    h2 {
+      padding: 3rem 3rem;
+      font-size: 1;
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: space-around;
+    a {
       font-size: 2rem;
-      font-weight: bolder;
-      line-height: 7rem;
-      padding-bottom: 20rem;
+      color: $text-color;
+      margin: 0 3rem;
+    }
+  }
+}
+
+/*FOOTER*/
+footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 90vh;
+  margin-top: 5rem;
+  background-image: url(images/footer-box.webp);
+  padding: 4rem 0rem;
+  color: $text-color;
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      margin: 0 5rem;
+      color: $text-color;
+      h3 {
+        font-size: 1.5rem;
+        line-height: 7rem;
+      }
+      a {
+        color: $text-color;
+        font-size: 1.2rem;
+        text-decoration: none;
+        line-height: 3rem;
       }
     }
+  }
+  .footer-logo {
+    color: $logo-color;
+    font-size: 2rem;
+    font-weight: bolder;
+    line-height: 7rem;
+    padding-bottom: 20rem;
+  }
+}
