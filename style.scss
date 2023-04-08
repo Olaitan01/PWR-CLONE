@@ -45,7 +45,6 @@ $border-color: rgb(225, 252, 79);
 }
 body {
   width: 100%;
-  height: 100%;
   background-color: $background-color;
   font-family: Arial,Helvetica,sans-serif;
 
@@ -91,7 +90,7 @@ header {
       justify-content: right;
       position: absolute;
       right: 0;
-      padding: 2rem;
+      padding: 2rem ;
     }
     .K8MSra{
         width: 40%;
@@ -120,7 +119,47 @@ header {
       }
     }
   }
+
+  /*MOBILE HEADER*/
+  .top-mobile-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $logo-color;
+    padding: 1rem;
+    display: none;
+  }
+  .mobile-logo-left{
+    color: $logo-color;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  .mobile-nav{
+    ul{
+      font-size: 2rem;
+      font-weight: bolder;
+      a{
+        color: $logo-color;
+        text-decoration: none;
+      }
+    }
+  }
+  .burger-menu{
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    border: none;
+
+    img{
+      max-width: 100%;
+
+    }
+    .close-icon{
+      display: none;
+    }
+  }
 }
+
 
 /**Main Content**/
 /*CONTENT 1*/
@@ -420,7 +459,6 @@ footer {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  
   background-repeat: no-repeat;
   margin-top: 5rem;
   background-image: url(images/footer-box.webp);
@@ -465,7 +503,11 @@ footer {
         font-size: 3rem;
     }
    
+    body{
+      overflow-x: hidden;
+    }
     
+  
 .header-hero{
     .hero-plastic-line-container{
         width: 100%;
@@ -545,16 +587,17 @@ footer {
   }
 }
 .content-3{
+  .header{
+transform: translateY(12rem);
+  }
+.content-3-flx{
   .K8MSra{
     max-width: 100%;
-    height: 20vh;
+    height: 50vh;
      object-fit: cover;
      object-position: center ; 
     opacity: 1;
-}
-
-
-.content-3-flx{
+  }
   .transparent-boot {
     position: absolute;
     right: 15rem;
@@ -572,6 +615,7 @@ footer {
   }
 }
 }
+
 .content-4{
   .edition{
     padding-left: 1rem;
@@ -593,3 +637,19 @@ footer {
 }
 
 /*600px for mobile*/
+@media screen and (max-width:600px) {
+  .header{
+    display: flex;
+    flex-direction: column;
+    .top-mobile-header{
+      display: block;
+    }
+    .nav,.K8MSra{
+      display: none;
+    }
+    .hero-plastic-line-container{
+      background-color: $background-color;
+    }
+ 
+  }
+}
