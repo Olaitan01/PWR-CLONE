@@ -24,7 +24,7 @@ header .hero-boot-container {
   height: 100vh;
 }
 header .hero-boot-container .logo {
-  color: rgb(255, 255, 255);
+  color: rgb(224, 251, 79);
   font-size: 2rem;
   font-weight: bolder;
   top: 0;
@@ -33,6 +33,7 @@ header .hero-boot-container .logo {
 }
 header .hero-boot-container .boot {
   padding-top: 10rem;
+  max-width: 100%;
 }
 header .hero-plastic-line-container {
   background-color: rgb(29, 29, 29);
@@ -57,8 +58,14 @@ header .hero-plastic-line-container .nav {
   right: 0;
   padding: 2rem;
 }
-header .hero-plastic-line-container .hero-plastic-line {
-  max-width: 100%;
+header .hero-plastic-line-container .K8MSra {
+  width: 40%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  opacity: 1;
 }
 header .hero-plastic-line-container p {
   color: rgb(255, 255, 255);
@@ -260,11 +267,20 @@ header .hero-plastic-line-container .btn .arrow-container {
 .content-3 .content-3-flx .desc-left {
   padding-left: 3rem;
 }
+.content-3 .content-3-flx .K8MSra {
+  width: 78.5%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  opacity: 1;
+}
 .content-3 .content-3-flx .transparent-boot {
   position: absolute;
-  right: 28.5rem;
+  right: 30rem;
   width: 40%;
-  top: 30.5rem;
+  top: 25rem;
 }
 
 /*CONTENT 4*/
@@ -402,7 +418,7 @@ footer {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 90vh;
+  background-repeat: no-repeat;
   margin-top: 5rem;
   background-image: url(images/footer-box.webp);
   padding: 4rem 0rem;
@@ -434,4 +450,110 @@ footer .footer-logo {
   font-weight: bolder;
   line-height: 7rem;
   padding-bottom: 20rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+@media screen and (max-width: 900px) {
+  .header-hero .hero-plastic-line-container {
+    width: 100%;
+    height: 50vh;
+    padding: 0 2rem 0rem 2rem;
+    transform: translateY(-50%);
+  }
+  .header-hero .hero-plastic-line-container .K8MSra {
+    width: 40%;
+    height: 20vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    opacity: 1;
+  }
+  .header-hero .hero-plastic-line-container p {
+    padding-top: 1.5rem;
+  }
+  .header-hero .hero-plastic-line-container .btn {
+    width: 35% !important;
+  }
+  #mobile-paragraph-font, #feat-desc {
+    font-size: 1rem;
+  }
+  #mobile-header-font {
+    font-size: 3rem;
+  }
+  #feat-header {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  .content-1 {
+    padding: 0rem 1rem;
+    transform: translateY(-50%);
+  }
+  .content-1 .paragraph-container {
+    padding: 0rem 3rem;
+    width: 70%;
+  }
+  .content-1 .paragraph-container .header {
+    line-height: 4rem;
+  }
+  .content-1 .paragraph-container .btn {
+    width: 50% !important;
+  }
+  .content-1 .paragraph-container .paragraph {
+    display: initial;
+  }
+  .content-1 .boot-model {
+    right: 0rem;
+    bottom: -8.5rem;
+    transform: translateX(2.5rem);
+  }
+  .content-1 .boot-model .boot-modell {
+    width: 50%;
+  }
+  .content-2 .content-2-flx {
+    text-align: 0.5em;
+  }
+  .content-2 .content-2-flx .img-container {
+    width: 25%;
+    height: 25vh;
+  }
+  .content-3 .K8MSra {
+    max-width: 100%;
+    height: 20vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    opacity: 1;
+  }
+  .content-3 .content-3-flx .transparent-boot {
+    position: absolute;
+    right: 15rem;
+    width: 40%;
+    top: 20rem;
+  }
+  .content-3 .content-3-flx h2 {
+    line-height: 1.5rem;
+  }
+  .content-3 .content-3-flx .desc-right {
+    padding: 3rem 2rem;
+  }
+  .content-3 .content-3-flx .desc-left {
+    padding: 1rem;
+  }
+  .content-4 .edition {
+    padding-left: 1rem;
+  }
+  .content-4 h1 {
+    line-height: 2.5rem;
+  }
+  .content-4 p {
+    line-height: 2rem;
+  }
+  .content-4 img {
+    max-width: 100%;
+  }
+  .content-4 .btn {
+    width: 100% !important;
+  }
+}
+/*600px for mobile*//*# sourceMappingURL=style.css.map */
