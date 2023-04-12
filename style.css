@@ -20,6 +20,9 @@ header .header-hero {
   justify-content: space-between;
   align-items: center;
 }
+header .mobile-header-top {
+  display: none;
+}
 header .hero-boot-container {
   height: 100vh;
 }
@@ -97,39 +100,6 @@ header .hero-plastic-line-container .btn {
 header .hero-plastic-line-container .btn .arrow-container {
   border: 0.2rem solid rgb(0, 0, 0);
   background-color: rgb(0, 0, 0);
-}
-header .top-mobile-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: rgb(224, 251, 79);
-  padding: 1rem;
-  display: none;
-}
-header .mobile-logo-left {
-  color: rgb(224, 251, 79);
-  font-size: 2rem;
-  font-weight: bolder;
-}
-header .mobile-nav ul {
-  font-size: 2rem;
-  font-weight: bolder;
-}
-header .mobile-nav ul a {
-  color: rgb(224, 251, 79);
-  text-decoration: none;
-}
-header .burger-menu {
-  background-color: inherit;
-  display: flex;
-  align-items: center;
-  border: none;
-}
-header .burger-menu img {
-  max-width: 100%;
-}
-header .burger-menu .close-icon {
-  display: none;
 }
 
 /**Main Content**/
@@ -484,8 +454,14 @@ footer .footer-logo {
   line-height: 7rem;
   padding-bottom: 20rem;
 }
+footer .mobile-cc {
+  display: none;
+}
 
 @media screen and (max-width: 900px) {
+  .mobile-header {
+    display: none;
+  }
   body {
     overflow-x: hidden;
   }
@@ -510,7 +486,8 @@ footer .footer-logo {
   .header-hero .hero-plastic-line-container .btn {
     width: 35% !important;
   }
-  #mobile-paragraph-font, #feat-desc {
+  #mobile-paragraph-font,
+  #feat-desc {
     font-size: 1rem;
   }
   #mobile-header-font {
@@ -597,17 +574,215 @@ footer .footer-logo {
 }
 /*600px for mobile*/
 @media screen and (max-width: 600px) {
-  .header {
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    padding-bottom: 28rem;
+  }
+  header .header-hero {
     display: flex;
     flex-direction: column;
   }
-  .header .top-mobile-header {
-    display: block;
+  header .mobile-header-top {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    position: relative;
   }
-  .header .nav, .header .K8MSra {
+  header .mobile-header-top .burger-menu {
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    z-index: 1;
+    right: 0;
+  }
+  header .mobile-header-top .burger-menu .close-icon {
+    display: none;
+    max-width: 100%;
+  }
+  header .mobile-header-top .nav {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: -100rem;
+    transition: left 0.2s ease-in-out;
+  }
+  header .mobile-header-top .nav nav {
+    padding-top: 4rem;
+  }
+  header .mobile-header-top .nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  header .mobile-header-top .nav a span {
+    color: rgb(224, 251, 79);
+  }
+  header .hero-boot-container {
+    color: rgb(224, 251, 79);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 0.5rem 0rem 9rem;
+    height: 70vh;
+    margin-bottom: 8rem;
+  }
+  header .hero-boot-container .logo {
     display: none;
   }
-  .header .hero-plastic-line-container {
-    background-color: rgb(0, 0, 0);
+  header .hero-boot-container .boot {
+    padding-top: 0;
+  }
+  header .hero-plastic-line-container {
+    background-color: inherit;
+    position: initial;
+  }
+  header .hero-plastic-line-container .nav {
+    display: none;
+  }
+  header .hero-plastic-line-container .K8MSra {
+    display: none;
+  }
+  header .hero-plastic-line-container #mobile-paragraph-font {
+    font-size: 1.35rem;
+    line-height: 2rem;
+    padding: 0 1.5rem;
+  }
+  header .hero-plastic-line-container #mobile-header-font {
+    font-size: 4rem;
+    line-height: 4rem;
+    padding: 0 1.3rem;
+  }
+  header .hero-plastic-line-container .btn {
+    position: initial;
+    margin-left: 1.5rem;
+  }
+  .content-1 {
+    flex-direction: column;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .content-1 .paragraph-container {
+    padding: 1.5rem;
+    width: 100%;
+  }
+  .content-1 .paragraph-container #mobile-paragraph-font {
+    font-size: 1rem;
+  }
+  .content-1 .hoodie-model {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  .content-1 .boot-model {
+    position: initial;
+    transform: initial !important;
+    padding: 1.5rem;
+  }
+  .content-1 .boot-model .boot-modell {
+    width: 500px;
+  }
+  .content-2 .content-2-flx {
+    flex-direction: column;
+  }
+  .content-2 .content-2-flx .img-container {
+    width: 50%;
+    height: 50vh;
+    margin: 1.5rem 0;
+  }
+  .content-2 .content-2-flx #feat-header {
+    font-size: 1.5rem;
+  }
+  .content-2 .content-2-flx #feat-desc {
+    font-size: 1rem;
+    display: initial;
+    line-height: 2rem;
+  }
+  .content-3 .header {
+    position: initial;
+    transform: translateY(4rem);
+    padding: 1.5rem;
+  }
+  .content-3 .content-3-flx {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .content-3 .content-3-flx .desc-left {
+    margin: 1.2rem;
+  }
+  .content-3 .content-3-flx .K8MSra {
+    width: 50%;
+    margin: 3rem 2rem;
+  }
+  .content-3 .content-3-flx .transparent-boot {
+    right: 0;
+    width: 80%;
+  }
+  .content-4 {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .content-4 #mobile-header-font {
+    line-height: 3rem;
+  }
+  .content-4 .btn {
+    font-size: 1.5rem;
+    padding: 0;
+    margin-bottom: 4rem;
+  }
+  .content-5 {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+  .content-5 #mobile-paragraph-font {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .content-5 #mobile-header-font {
+    font-size: 1.5rem;
+    display: initial;
+    line-height: 2rem;
+  }
+  .content-5 .p-flex .arr-down {
+    transform: initial;
+  }
+  .content-5 .socials-connect h2 {
+    text-align: center;
+  }
+  .content-5 .socials-connect .socials {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content-5 .socials-connect .socials div {
+    padding: 1rem 0;
+  }
+  footer {
+    height: 80vh;
+    padding: 1rem;
+    flex-direction: column;
+    background-position: center;
+  }
+  footer .footer-fc {
+    display: none;
+  }
+  footer .footer-nav {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  footer .footer-nav .nav {
+    margin: 0;
+  }
+  footer .mobile-cc {
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */
